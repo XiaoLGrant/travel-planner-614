@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Planner</title>
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@500&display=swap" rel="stylesheet">
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container destinations-container">
+    <h1>Destinations</h1>
+    <section class="destination">
+      <ul class="destination-list">
+        <% destinations.forEach( el=> { %>
+          <li class='destination-list-item' data-id='<%=el._id%>'>
+            <span class='<%= el.visited === true ? ' visited' : 'not-visited' %>'><%= el.destination %></span>
+            <span class='expand'><i class="fas fa-chevron-down"></i></span>
+            <span class='edit'> <a href="/edit/<%= el._id %>">Edit</a></span>
+            <span class='del'> Delete </span><br>
+          </li>
+          <p class='destinationNotes hidden' id='notes<%= el._id %>'><%= el.notes %></p>
+          <% }) %>
+      </ul>
+
+      <h3 class="destinations-count">
+        <%= user.userName %> has <%= left %> destinations left to visit.
+      </h3>
+
+      <form action="/destinations/createDestination" method='POST' class="destination-header">
+        <input type="text" placeholder="Enter a Destination" name='destinationItem'>
+        <textarea name="notes" cols="45" rows="6" placeholder="notes"></textarea>
+
+        <button type="submit"><span class="fas fa-plus">Add Destination</span></button>
+      </form>
+
+    </section>
+    <a href="/logout">Logout</a>
+  </div>
+
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
