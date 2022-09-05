@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Travel Planner</title>
+  <title>Travelr</title>
   <!-- GOOGLE FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +17,12 @@
 </head>
 
 <body>
+  <nav>
+    <ul>
+      <li><a href="/destinations">Travelr</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
   <div class="container destinations-container">
     <h1>Edit Destination: <%= destination[0].destination %></h1>
     <section class="destination">
@@ -33,7 +39,6 @@
 
     </section>
     <a href="/destinations">Cancel</a>
-    <a href="/logout">Logout</a>
   </div>
 
   <script src="/js/main.js"></script>

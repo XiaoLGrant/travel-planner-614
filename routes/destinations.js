@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const destinationsController = require('../controllers/destinations')
-//const editController = require('../controllers/edit')
 const { ensureAuth } = require('../middleware/auth')
 
 router.get('/', ensureAuth, destinationsController.getDestinations)

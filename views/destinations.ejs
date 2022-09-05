@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Travel Planner</title>
+  <title>Travelr</title>
   <!-- GOOGLE FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,8 +17,18 @@
 </head>
 
 <body>
+  <nav>
+    <ul>
+      <li><a href="/destinations">Travelr</a></li>
+      <li><a href="#addDestination">Add Destination</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
   <div class="container destinations-container">
     <h1>Destinations</h1>
+    <h3 class="destinations-count">
+      <%= user.userName %> has <%= left %> destinations left to visit.
+    </h3>
     <section class="destination">
       <ul class="destination-list">
         <% destinations.forEach( el=> { %>
@@ -32,39 +42,35 @@
           <% }) %>
       </ul>
 
-      <h3 class="destinations-count">
-        <%= user.userName %> has <%= left %> destinations left to visit.
-      </h3>
+      <div>
+        <h3 id="addDestination">Add A Destination</h3>
+        <form action="/destinations/createDestination" method='POST' class="destination-header">
+          <label for="destinationItem" >Destination Name:</label>
+          <input type="text" placeholder="Enter a Destination" name='destinationItem'>
 
-      <form action="/destinations/createDestination" method='POST' class="destination-header">
-        <input type="text" placeholder="Enter a Destination" name='destinationItem'>
-        <textarea name="notes" cols="45" rows="6" placeholder="notes" id="notesArea"></textarea>
+          <label for="notes">Notes:</label>
+          <textarea name="notes" cols="45" rows="6" placeholder="notes" id="notesArea"></textarea>
+  
+          <button type="submit"><span class="fas fa-plus">Add Destination</span></button>
+        </form>
+      </div>
 
-        <button type="submit"><span class="fas fa-plus">Add Destination</span></button>
-      </form>
 
     </section>
-    <a href="/logout">Logout</a>
   </div>
 
 
   <script src="js/main.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.19.1/ckeditor.js" integrity="sha512-Ooi9IbjM2SIDjQ02ENbPFuuORT8F8Rc+rowcYfLneDwKRxw1+gVVj5tciVmV/APnA/Ys+qy1MbNKK3k2EaAHcw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.tiny.cloud/1/nf56djxmrt5h0sf7j8vkhscwakqvwdeyi7ftriugdec5tc05/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
   <script>
-    CKEDITOR.replace('notes', {
-        plugins: 'wysiwygarea, toolbar, basicstyles, link'
-    })
-</script> -->
-<script src="https://cdn.tiny.cloud/1/nf56djxmrt5h0sf7j8vkhscwakqvwdeyi7ftriugdec5tc05/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-<script>
-    tinymce.init({
-        selector: '#notesArea',
-        plugins: 'lists',
-        toolbar: 'numlist bullist',
-        toolbar_sticky: true,
-        autosave_restore_when_empty:true
-    });
-</script>
+      tinymce.init({
+          selector: '#notesArea',
+          plugins: 'lists',
+          toolbar: 'numlist bullist',
+          toolbar_sticky: true,
+          autosave_restore_when_empty:true
+      });
+  </script>
 </body>
 
 </html>
