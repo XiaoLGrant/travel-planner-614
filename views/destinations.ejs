@@ -25,7 +25,7 @@
           <li class='destination-list-item' data-id='<%=el._id%>'>
             <span class='<%= el.visited === true ? ' visited' : 'not-visited' %>'><%= el.destination %></span>
             <span class='expand'><i class="fas fa-chevron-down"></i></span>
-            <span class='edit'> <a href="/edit/<%= el._id %>">Edit</a></span>
+            <span class='edit'> <a href="/destinations/<%= el._id %>">Edit</a></span>
             <span class='del'> Delete </span><br>
           </li>
           <p class='destinationNotes hidden' id='notes<%= el._id %>'><%= el.notes %></p>

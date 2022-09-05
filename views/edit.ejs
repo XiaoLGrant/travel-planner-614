@@ -21,14 +21,14 @@
     <h1>Edit Destination: <%= destination[0].destination %></h1>
     <section class="destination">
 
-      <form action='/edit/<%= destination[0]._id %>' method='POST' class="destination-header">
+      <form action='<%= destination[0]._id %>' method='POST' class="destination-header">
         <input type="hidden" name="_method" value="PUT">
         <label for="destinationItem">Destination Name</label>
         <input type="text" name='destinationItem' value="<%= destination[0].destination %>">
         <label for="notes">Notes</label>
         <textarea name="notes" cols="45" rows="6" placeholder="notes"><%= destination[0].notes %></textarea>
 
-        <button type="submit">Save</span></button>
+        <button type="submit">Save</button>
       </form>
 
     </section>
