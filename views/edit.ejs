@@ -46,10 +46,10 @@
 <script>
     tinymce.init({
         selector: '#notesArea',
-        plugins: 'lists',
+        plugins: 'lists autosave',
         toolbar: 'undo redo bold italic underline numlist bullist outdent indent',
         toolbar_sticky: true,
-        autosave_restore_when_empty:true
+        autosave_ask_before_unload: true
     });
 </script>
 </body>
