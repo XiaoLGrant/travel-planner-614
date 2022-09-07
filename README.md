@@ -24,9 +24,9 @@ In the future, we would like to make the following additions:
 ---
 
 # Contributors
-Cameron Andrew
-Isaiah Simon
-[Jamaal Brown](https://github.com/Jamaalwbrown)
-Michael G Atip Castronuego
-[Xiao Grant](https://github.com/XiaoLGrant)
+- Cameron Andrew
+- Isaiah Simon
+- [Jamaal Brown](https://github.com/Jamaalwbrown)
+- Michael G Atip Castronuego
+- [Xiao Grant](https://github.com/XiaoLGrant)
 
