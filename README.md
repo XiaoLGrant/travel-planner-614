@@ -32,7 +32,7 @@ In the future, we would like to make the following additions:
 
 ## Contributors
 - Cameron Andrew
-- Isaiah Simon
+- [Isaiah Simon](https://github.com/isaiahsimon)
 - [Jamaal Brown](https://github.com/Jamaalwbrown)
 - [Michael G Atip Castronuego](https://github.com/Android-X2)
 - [Xiao Grant](https://github.com/XiaoLGrant)
