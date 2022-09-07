@@ -23,10 +23,16 @@ In the future, we would like to make the following additions:
 
 ---
 
+## Lessons Learned
+- **Coordination/Communication:** Worked asynchronously by communicating to the team when someone starts working on/finishes a feature or component of the application
+- **Time Management/MVP Creation:** Initially brainstormed several features for the application. Broke everything down to the MVP and tabled some features for future optimizations as time permits.
+- **Package Version Control Issue:** Learned about dependency version management in package.json files. Specifically that the carat "^" sign before the dependency version ("express": "^4.17.1") means that we can accept minor releases and patch releases, but not a major release when updating our package (the middle digit, 4.17.1 and 4.18.1 ... 17 --> 18). We had some errors due to the "npm install" command actually updating our express dependency to 4.18.1 instead of keeping at 4.17.1 because of that carat "^" sign. We removed the carat before the dependency version in order to force our local environments to install EXACT versions of each package when downloading/cloning/forking projects. This eliminated our dependency version errors we received when building the application.
+
+---
+
 ## Contributors
 - Cameron Andrew
 - Isaiah Simon
 - [Jamaal Brown](https://github.com/Jamaalwbrown)
 - [Michael G Atip Castronuego](https://github.com/Android-X2)
 - [Xiao Grant](https://github.com/XiaoLGrant)
-
