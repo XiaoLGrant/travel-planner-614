@@ -23,7 +23,7 @@ In the future, we would like to make the following additions:
 
 ---
 
-# Contributors
+## Contributors
 - Cameron Andrew
 - Isaiah Simon
 - [Jamaal Brown](https://github.com/Jamaalwbrown)
