@@ -27,6 +27,6 @@ In the future, we would like to make the following additions:
 - Cameron Andrew
 - Isaiah Simon
 - [Jamaal Brown](https://github.com/Jamaalwbrown)
-- Michael G Atip Castronuego
+- [Michael G Atip Castronuego](https://github.com/Android-X2)
 - [Xiao Grant](https://github.com/XiaoLGrant)
 
