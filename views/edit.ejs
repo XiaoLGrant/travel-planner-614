@@ -1,0 +1,24 @@
+<%- include('partials/header') -%>
+
+<div class="min-h-screen">
+    <div class="card w-full max-w-sm shadow-2xl bg-base-100">
+        <h1>Edit Destination: <%= destination[0].destination %></h1>
+        <section class="destination">
+
+            <form action='<%= destination[0]._id %>' method='POST' class="destination-header">
+              <input type="hidden" name="_method" value="PUT">
+              <label for="destinationItem">Destination Name</label>
+              <input type="text" name='destinationItem' value="<%= destination[0].destination %>">
+              <label for="notes">Notes</label>
+              <textarea name="notes" cols="45" rows="6" placeholder="notes" id="notesArea"><%= destination[0].notes %></textarea>
+      
+              <button type="submit">Save</button>
+            </form>
+      
+          </section>
+          <a href="/destinations">Cancel</a> 
+    </div>
+</div>
+
+
+<%- include('partials/footer') -%>

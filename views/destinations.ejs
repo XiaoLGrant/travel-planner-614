@@ -1,0 +1,62 @@
+<%- include('partials/header') -%>
+
+<div class="min-h-screen w-full overflow-hidden bg-neutral-content ">
+    <div class="flex justify-center items-center">
+        <div class="xl:max-w-[1280px] w-[50%] sm:py-6 py-3 ">
+            <div class="shadow-2xl bg-base-100 rounded-box flex flex-col items-center">
+                <h1>Destinations</h1>
+                <h3 class="destinations-count">
+                <%= user.userName %> has <%= left %> <%= left===1? 'destination':'destinations' %> left to visit.
+                </h3>
+                <section class="destination">
+                <div>
+                    <h3 id="addDestination">Add A Destination</h3>
+                    <form action="/destinations/createDestination" method='POST' class="destination-header">
+                    <label for="destinationItem" >Destination Name:</label>
+                    <input type="text" placeholder="Enter a Destination" name='destinationItem' class="w-full">
+
+                    <!-- <label for="notes">Notes:</label>
+                    <textarea name="notes" cols="45" rows="6" placeholder="notes" id="notesArea"></textarea>
+                    -->
+                    <button type="submit"><span class="fas fa-plus">Add Destination</span></button> 
+                    </form>
+                </div>
+                <ul class="w-full">
+                    <% destinations.forEach( el=> { %>
+                    <li class='flex justify-between w-full' data-id='<%=el._id%>'>
+                        <span>
+                            <div class="dropdown dropdown-hover">
+                                <label tabindex="0" class=""><%= el.destination %></label>
+                                <div tabindex="0" class="card compact dropdown-content shadow bg-base-100 rounded-box w-auto">
+                                    <div class="card-body w-[400px]">
+                                        <%= el.notes %>
+                                    </div>
+                                </div>
+                            </div>
+                        </span>
+                        <div class="flex justify-around">
+                            <span class='edit'> <a href="/destinations/<%= el._id %>">Edit</a></span>
+                            <span> 
+                                <div class="">
+                                    <form
+                                    action="/destinations/deleteDestination/<%=el._id %>?_method=DELETE"
+                                    method="POST"
+                                    class="">
+                                    <button class="" type="submit">Delete</button>
+                                    </form>       
+                                </div>
+                             </span>
+    
+                        </div>
+                        <!-- <a href="/destinations/deleteDestination/<%=el.id %>"><span id='del'> Delete </span><br></a> -->
+                    </li>
+                    <% }) %>
+                </ul>
+
+
+                </section>
+            </div>
+    </div>
+    </div>
+</div>
+<%- include('partials/footer') -%>
