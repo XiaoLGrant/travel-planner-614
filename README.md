@@ -1,40 +1,6 @@
-A simple template that uses a MVC strcture with the basic
-dependencies/packages:
+Using the MVC template in creating a fully responsive web application Travlr, where your able to write done destinations you want to go
+and make notes about that destination.
 
--bcrypt
+Dependencies included but not all:
 
--connect-mongo
-
--daisyui
-
--ejs
-
--dotenv
-
--express 
-
--express-flash
-
--express-session
-
--method-override
-
--mongodb
-
--mongoose
-
--nodemon
-    -as devDependency
-
--passport
-
--passport-local
-
--path
-
--tailwindcss
-    -Dont forget to adjust the build folders for tailwindCSS
-
--tailwindcss/typographyl;;
-
--validator 
+Express, EJS, mongodb, daisyui, tailwindcss
