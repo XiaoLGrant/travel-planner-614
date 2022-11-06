@@ -27,7 +27,7 @@ module.exports = {
             await Destination.findOneAndUpdate({_id:req.body.destinationIdFromJSFile},{
                 visited: true
             })
-            console.log('Marked Complete')
+            
             res.json('Marked Complete')
         }catch(err){
             console.log(err)
@@ -58,7 +58,7 @@ module.exports = {
         
         try{
             const destinationInfo = await Destination.find({_id: req.params.id})
-            console.log(destinationInfo)
+           
             res.render('edit.ejs', {destination: destinationInfo})
         }catch(err){
             console.log(err)
@@ -71,7 +71,7 @@ module.exports = {
                 destination: req.body.destinationItem,
                 notes: req.body.notes
             })
-            console.log('Destination udpated')
+           
             res.redirect('/destinations')
         }catch(err){
             console.log(err)

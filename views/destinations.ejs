@@ -1,89 +1,107 @@
 <%- include('partials/header') -%>
 
-<div class="min-h-screen w-full overflow-hidden bg-neutral-content ">
-    <div class="flex justify-center items-center">
-        <div class="xl:max-w-[1280px] w-[50%] sm:py-6 py-3 ">
-            <div class="shadow-2xl bg-base-100 rounded-box flex flex-col items-center">
-                <h3 class="font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px]">
-                <%= user.userName %> has <%= left %> <%= left===1? 'destination':'destinations' %> left to visit.
-                </h3>
-                <section class="">
-                <div>
-                    <h3 class="font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px] underline">Add A Destination</h3>
-                    <form action="/destinations/createDestination" method='POST' class="destination-header">
-                    <label for="destinationItem" class="font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px]">Destination Name:</label>
-                    <input type="text" placeholder="Enter a Destination" name='destinationItem' class="w-full">
 
-                    <!-- <label for="notes">Notes:</label>
-                    <textarea name="notes" cols="45" rows="6" placeholder="notes" id="notesArea"></textarea>
-                    -->
-                    <button type="submit"><span class="btn">Add</span></button> 
-                    </form>
-                </div>
-                <h1 class="font-poppins font-semibold xs:text-[48px] text-[40px] text-white xs:leading-[76.8px] leading-[66.8px] underline w-full">Destinations</h1>
-                <ul class="w-full">
-                    <% destinations.forEach( el=> { %>
-                    <li class='flex justify-between w-full' data-id='<%=el._id%>'>
-                        <span>
-                            <div class="dropdown dropdown-hover">
-                                <label tabindex="0" class=""><%= el.destination %></label>
-                                <div tabindex="0" class="card compact dropdown-content shadow bg-base-100 rounded-box w-auto">
-                                    <div class="card-body w-[400px] ">
-                                        <%= el.notes %>
-                                    </div>
-                                </div>
-                            </div>
-                        </span>
-                        <div class="flex justify-around">
-                            <span class='edit'> <a href="/destinations/<%= el._id %>">Edit</a></span>
-                            <span> 
-                                <div class="">
-                                    <form
-                                    action="/destinations/deleteDestination/<%=el._id %>?_method=DELETE"
-                                    method="POST"
-                                    class="">
-                                    <button class="ml-3" type="submit">Delete</button>
-                                    </form>       
-                                </div>
-                             </span>
+<div class="min-h-screen w-full overflow-hidden bg-gradient-to-b from-blue-700 via-blue-800 ">
     
-                        </div>
-                        <!-- <a href="/destinations/deleteDestination/<%=el.id %>"><span id='del'> Delete </span><br></a> -->
-                    </li>
-                    <% }) %>
-                </ul>
-
-
-                </section>
-            </div>
-        </div>
-    </div>
-    
-</div>
-<div class="min-h-screen w-full overflow-hidden  ">
     <div class="flex justify-center items-center">
         <div class="xl:max-w-[1280px] w-[80%] sm:py-6 py-3 ">
             <div class="flex ">
-        <div class="  flex flex-col ">
-            <div class="font-poppins font-black text-6xl ">
-                Travlr
-            </div>
-            <div class="font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px] mt-3 mb-1">
-                A simple and fully responsive <br>
-                web application to track your <br>
-                travel destinations.
-            </div>
-            <div>
-                ________________________________
-            </div>
-         </div>
+                <div class="  flex flex-col ">
+                    <div class="font-poppins font-black text-6xl ">
+                        Travlr
+                    </div>
+                    <div class="font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px] mt-3 mb-1">
+                        A simple and fully responsive <br>
+                        web application to track your <br>
+                        travel destinations.
+                    </div>
+                    <div>
+                        ___________________________________
+                    </div>
+                    <div>
+                        <ul class="flex flex-row justify-between">
+                            <li><a href="#About">About</a></li>
+                            <li>|</li>
+                            <li><a href="#HowToUse">How To Use</a></li>
+                            <li>|</li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div class="flex justify-center items-center">
-        <div class="xl:max-w-[1280px] w-[50%] sm:py-6 py-3 ">
-            <div class="shadow-2xl bg-base-100 rounded-box flex flex-col items-center">
-               test 1
+                <div class="xl:max-w-[1280px] w-full sm:py-6 py-3 ">
+                    <div class="flex flex-col ">
+                        <h3 class="font-poppins font-normal text-dimWhite text-[26px] leading-[30.8px] underline text-center">Add A Destination</h3>
+                        <form action="/destinations/createDestination" method='POST' class="destination-header flex flex-col items-center ">
+                            <label for="destinationItem" class="font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px] underline">Destination Name:</label>
+                            <input type="text" placeholder="Enter a Destination" name='destinationItem' class="w-[50%] m-1">
+                            <button type="submit"><span class="btn">Add</span></button> 
+                        </form>
+                    </div>
+                    <div>
+                        <div class="font-poppins font-black sm:text-6xl text-3xl  underline mt-3 ">
+                            Destinations
+                        </div>
+                    </div>
+                    <div class="font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px] underline m-2">
+                        <%= user.userName %> has <%= left %> <%= left===1? 'destination':'destinations' %> left to visit.
+                    </div>
+                    <div class="shadow-2xl bg-base-100 rounded-t-box flex justify-around">
+                        <div class="font-poppins font-black text-3xl ">Name</div>
+                        
+                    </div>
+                    <div>
+                        <ul class="w-full">
+                            <% destinations.forEach( el=> { %>
+                            <li class='flex justify-between w-full' data-id='<%=el._id%>'>
+                                <span>
+                                    <div class="dropdown dropdown-hover">
+                                        <label tabindex="0" class=""><%= el.destination %></label>
+                                        <div tabindex="0" class="card compact dropdown-content shadow bg-base-100 rounded-box w-auto">
+                                            <div class="card-body w-[400px] ">
+                                                <%= el.notes %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </span>
+                                <div class="flex justify-around">
+                                    <span class='edit'> <a href="/destinations/<%= el._id %>">Edit</a></span>
+                                    <span> 
+                                        <div class="">
+                                            <form
+                                            action="/destinations/deleteDestination/<%=el._id %>?_method=DELETE"
+                                            method="POST"
+                                            class="">
+                                            <button class="ml-3" type="submit">Delete</button>
+                                            </form>       
+                                        </div>
+                                     </span>
+            
+                                </div>
+                                <!-- <a href="/destinations/deleteDestination/<%=el.id %>"><span id='del'> Delete </span><br></a> -->
+                            </li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
+            <div id="About">
+                <div class="font-poppins font-black text-6xl underline">
+                    About
+                </div>
+                <div class="font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px]">
+                    Travlr is a simple, fully responsive web application that was the brainchild of 5 individuals who grouped together to challenge themselves in creating a web application with an MVC architecture. Travel allows users to log in/signup and create lists as well as create notes for each individual destination. It uses EJS, TailwindCSS, Express, Node.js, and a variety of packages and dependencies for it to work. 
+
+                </div>
+            </div>
+            <div id="HowToUse">
+                <div class="font-poppins font-black text-6xl underline">
+                    How To Use
+                </div>
+                <div class="font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px]">
+                    Travlr was made to be simple and easy. You simply add a destination and edit the notes that you want to place for that specific destination. 
+                </div>
             </div>
         </div>
     </div>
