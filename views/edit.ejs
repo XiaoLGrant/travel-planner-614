@@ -1,24 +1,30 @@
 <%- include('partials/header') -%>
 
-<div class="min-h-screen">
+<div class="hero min-h-screen flex-col bg-neutral-content ">
+  <div class="hero-content bg-neutral-content ">
     <div class="card w-full max-w-sm shadow-2xl bg-base-100">
-        <h1>Edit Destination: <%= destination[0].destination %></h1>
+      <div class="card-body ">
+        <h1 class="font-poppins font-black text-3xl underline">Edit Destination: <br><%= destination[0].destination %></h1>
         <section class="destination">
 
             <form action='<%= destination[0]._id %>' method='POST' class="destination-header">
               <input type="hidden" name="_method" value="PUT">
-              <label for="destinationItem">Destination Name</label>
-              <input type="text" name='destinationItem' value="<%= destination[0].destination %>">
+              <label for="destinationItem" class="font-poppins font-normal text-2xl underline">Destination Name</label>
+              <input type="text" name='destinationItem' class="text-black" value="<%= destination[0].destination %>">
               <label for="notes">Notes</label>
-              <textarea name="notes" cols="45" rows="6" placeholder="notes" id="notesArea"><%= destination[0].notes %></textarea>
+              <textarea name="notes" cols="45" rows="6" placeholder="notes" id="notesArea" class="text-black w-full"><%= destination[0].notes %></textarea>
       
-              <button type="submit">Save</button>
+              <button type="submit" class="btn w-full mt-3">Save</button>
             </form>
       
           </section>
-          <a href="/destinations">Cancel</a> 
+          <a href="/destinations" class="btn">Cancel</a> 
+      </div>
     </div>
+  </div>
+    
 </div>
+
 
 
 <%- include('partials/footer') -%>

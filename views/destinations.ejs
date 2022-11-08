@@ -2,9 +2,24 @@
 
 
 <div class="min-h-screen w-full overflow-hidden bg-gradient-to-b from-blue-700 via-blue-800 ">
-    
+        
     <div class="flex justify-center items-center">
         <div class="xl:max-w-[1280px] w-[80%] sm:py-6 py-3 ">
+            <div class="flex justify-end">
+                <div class="dropdown dropdown-bottom dropdown-end">
+                    <label tabindex="0" class="btn m-1">
+                        <svg width="32" height="32" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.49933 0.25C3.49635 0.25 0.25 3.49593 0.25 7.50024C0.25 10.703 2.32715 13.4206 5.2081 14.3797C5.57084 14.446 5.70302 14.2222 5.70302 14.0299C5.70302 13.8576 5.69679 13.4019 5.69323 12.797C3.67661 13.235 3.25112 11.825 3.25112 11.825C2.92132 10.9874 2.44599 10.7644 2.44599 10.7644C1.78773 10.3149 2.49584 10.3238 2.49584 10.3238C3.22353 10.375 3.60629 11.0711 3.60629 11.0711C4.25298 12.1788 5.30335 11.8588 5.71638 11.6732C5.78225 11.205 5.96962 10.8854 6.17658 10.7043C4.56675 10.5209 2.87415 9.89918 2.87415 7.12104C2.87415 6.32925 3.15677 5.68257 3.62053 5.17563C3.54576 4.99226 3.29697 4.25521 3.69174 3.25691C3.69174 3.25691 4.30015 3.06196 5.68522 3.99973C6.26337 3.83906 6.8838 3.75895 7.50022 3.75583C8.1162 3.75895 8.73619 3.83906 9.31523 3.99973C10.6994 3.06196 11.3069 3.25691 11.3069 3.25691C11.7026 4.25521 11.4538 4.99226 11.3795 5.17563C11.8441 5.68257 12.1245 6.32925 12.1245 7.12104C12.1245 9.9063 10.4292 10.5192 8.81452 10.6985C9.07444 10.9224 9.30633 11.3648 9.30633 12.0413C9.30633 13.0102 9.29742 13.7922 9.29742 14.0299C9.29742 14.2239 9.42828 14.4496 9.79591 14.3788C12.6746 13.4179 14.75 10.7025 14.75 7.50024C14.75 3.49593 11.5036 0.25 7.49933 0.25Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    </label>
+                    <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a href="https://github.com/IsaiahSimon/IsaiahSimon" target="_blank">Isaiah Simon</a></li>
+                        <li><a href="https://github.com/XiaoLGrant" target="_blank">Xiao L Grant</a></li>
+                        <li><a href="https://github.com/Android-X2" target="_blank">Michael G Atip Castronuevo</a></li>
+
+                    </ul>
+                </div>
+            </div>
+    
+            
             <div class="flex ">
                 <div class="  flex flex-col ">
                     <div class="font-poppins font-black text-6xl ">
@@ -16,7 +31,7 @@
                         travel destinations.
                     </div>
                     <div>
-                        ___________________________________
+                         ___________________________________
                     </div>
                     <div>
                         <ul class="flex flex-row justify-between">
@@ -28,14 +43,16 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div>    
+            
+            
             <div class="flex justify-center items-center">
                 <div class="xl:max-w-[1280px] w-full sm:py-6 py-3 ">
                     <div class="flex flex-col ">
                         <h3 class="font-poppins font-normal text-dimWhite text-[26px] leading-[30.8px] underline text-center">Add A Destination</h3>
                         <form action="/destinations/createDestination" method='POST' class="destination-header flex flex-col items-center ">
                             <label for="destinationItem" class="font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px] underline">Destination Name:</label>
-                            <input type="text" placeholder="Enter a Destination" name='destinationItem' class="w-[50%] m-1">
+                            <input type="text" placeholder="Enter a Destination" name='destinationItem' class="w-[50%] m-1 text-black">
                             <button type="submit"><span class="btn">Add</span></button> 
                         </form>
                     </div>
@@ -86,12 +103,12 @@
                     </div>
                 </div>
             </div>
-            <div id="About">
+            <div id="About" class="mb-3">
                 <div class="font-poppins font-black text-6xl underline">
                     About
                 </div>
                 <div class="font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px]">
-                    Travlr is a simple, fully responsive web application that was the brainchild of 5 individuals who grouped together to challenge themselves in creating a web application with an MVC architecture. Travel allows users to log in/signup and create lists as well as create notes for each individual destination. It uses EJS, TailwindCSS, Express, Node.js, and a variety of packages and dependencies for it to work. 
+                    Travlr is a simple, fully responsive web application that was the brainchild of 5 individuals who grouped together to challenge themselves in creating a web application with an MVC architecture. Travel allows users to log in/signup and create lists as well as create notes for each individual destination. It uses EJS, TailwindCSS, Express, Node.js, and a variety of packages and dependencies for it to work. Check out the code on github <a href="https://github.com/Android-X2/Travlr2.0" class="text-rose-400">here</a>. Or meet the creators of this project, just click on the github logo at the very top. 
 
                 </div>
             </div>
@@ -100,7 +117,7 @@
                     How To Use
                 </div>
                 <div class="font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px]">
-                    Travlr was made to be simple and easy. You simply add a destination and edit the notes that you want to place for that specific destination. 
+                    Travlr was made to be simple and easy. You simply add a destination and edit the notes that you want to place for that specific destination. To view the notes either click on the edit button or hover over the destination. 
                 </div>
             </div>
         </div>
