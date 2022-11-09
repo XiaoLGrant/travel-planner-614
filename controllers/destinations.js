@@ -27,8 +27,8 @@ module.exports = {
             await Destination.findOneAndUpdate({_id:req.body.destinationIdFromJSFile},{
                 visited: true
             })
-            
-            res.json('Marked Complete')
+            console.log('Mark Visited')
+            res.json('Marked Visited')
         }catch(err){
             console.log(err)
         }
@@ -38,8 +38,8 @@ module.exports = {
             await Destination.findOneAndUpdate({_id:req.body.destinationIdFromJSFile},{
                 visited: false
             })
-            console.log('Marked Incomplete')
-            res.json('Marked Incomplete')
+            console.log('Marked Not Visited')
+            res.json('Marked Not Visited')
         }catch(err){
             console.log(err)
         }
