@@ -65,7 +65,7 @@ module.exports = {
         }
     },
     updateDestination: async (req, res) => {
-        console.log(req.params.id)
+        
         try{
             await Destination.findOneAndUpdate({_id: req.params.id},{
                 destination: req.body.destinationItem,
