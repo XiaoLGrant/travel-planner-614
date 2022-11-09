@@ -327,9 +327,9 @@ legend {
   padding: 0;
 }
 
-ol,
-ul,
-menu {
+nav ol,
+nav ul,
+nav menu {
   list-style: none;
   margin: 0;
   padding: 0;
